@@ -1,0 +1,7 @@
+user_id,email,full_name,phone,registration_date
+ab6d3fcf-eb49-4ab5-91c3-49f46f0dcc09,valid.user@example.com,Иван Иванов,+71234567890,2024-05-10
+bad-uuid-format,good.email@example.com,Петр Петров,+71234567890,2024-05-10
+b3f7c4de-2e17-45e1-99e3-117cbd94a123,bademail@@example,Мария Сидорова,+71234567890,2024-05-10
+a9d8c5fa-4123-4cc5-81a4-13edc2b45555,valid@domain.com,Анна Иванова,notaphone,2024-05-10
+9bfc3b7e-0f27-4829-bc63-3a7fbcafc7d9,user4@example.com,Сергей Смирнов,+79998887766,20-15-2024
+e1f4a0dd-3f73-4d1f-b7cb-4cfa9b5e9981,,Аноним,,2024-05-10

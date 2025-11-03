@@ -1,0 +1,7 @@
+[
+  "Invalid UUID for user_id: bad-uuid-format",
+  "Invalid email format: bademail@@example",
+  "Invalid phone number: notaphone",
+  "Invalid registration_date: 20-15-2024",
+  "Invalid email format: nan"
+]

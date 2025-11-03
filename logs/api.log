@@ -1,3 +1,60 @@
 2025-10-30 23:18:09,255 - app.crud - INFO - Creating user: Иван Иванов
 2025-10-30 23:18:09,261 - app.crud - INFO - User created with ID: 49924646-74d8-4998-800e-92c79034d9d9
 2025-10-30 23:20:26,418 - app.crud - INFO - Fetching user with ID: 49924646-74d8-4998-800e-92c79034d9d9
+2025-11-03 15:09:40,307 - app.etl.extractors - INFO - Найдено файлов для обработки: 1
+2025-11-03 15:09:40,317 - app.etl.extractors - INFO - Извлечено 6 строк из data/input\users_test.csv
+2025-11-03 15:09:40,317 - app.etl.orchestrator - INFO - Обработка data/input\users_test.csv как сущности users, строк: 6
+2025-11-03 15:09:40,318 - app.etl.orchestrator - WARNING - Ошибки сохранены в data/errors\users_test.csv.errors.json
+2025-11-03 15:09:40,318 - app.etl.orchestrator - INFO - Файл data/input\users_test.csv перемещён в data/processed\users_test.csv
+2025-11-03 15:09:40,318 - mt-surent-etl - INFO - ETL завершён. Отчёт:
+2025-11-03 15:09:40,318 - mt-surent-etl - INFO - data/input\users_test.csv -> {'total': 6, 'created': 0, 'errors': ['No transformer for users', 'Invalid UUID for user_id: bad-uuid-format', 'Invalid email format: bademail@@example', 'Invalid phone number: notaphone', 'Invalid registration_date: 20-15-2024', 'Invalid email format: nan']}
+2025-11-03 15:13:42,069 - app.etl.extractors - INFO - Найдено файлов для обработки: 1
+2025-11-03 15:13:42,071 - app.etl.extractors - INFO - Извлечено 6 строк из data/input\user_test.csv
+2025-11-03 15:13:42,071 - app.etl.orchestrator - INFO - Обработка data/input\user_test.csv как сущности users, строк: 6
+2025-11-03 15:13:42,071 - app.etl.orchestrator - WARNING - Ошибки сохранены в data/errors\user_test.csv.errors.json
+2025-11-03 15:13:42,072 - app.etl.orchestrator - INFO - Файл data/input\user_test.csv перемещён в data/processed\user_test.csv
+2025-11-03 15:13:42,072 - mt-surent-etl - INFO - ETL завершён. Отчёт:
+2025-11-03 15:13:42,072 - mt-surent-etl - INFO - data/input\user_test.csv -> {'total': 6, 'created': 0, 'errors': ['No transformer for users', 'Invalid UUID for user_id: bad-uuid-format', 'Invalid email format: bademail@@example', 'Invalid phone number: notaphone', 'Invalid registration_date: 20-15-2024', 'Invalid email format: nan']}
+2025-11-03 15:16:47,983 - app.etl.extractors - INFO - Найдено файлов для обработки: 0
+2025-11-03 15:16:47,983 - mt-surent-etl - INFO - ETL завершён. Отчёт:
+2025-11-03 15:17:25,076 - app.etl.extractors - INFO - Найдено файлов для обработки: 1
+2025-11-03 15:17:25,078 - app.etl.extractors - INFO - Извлечено 6 строк из data/input\user_test.csv
+2025-11-03 15:17:25,078 - app.etl.orchestrator - INFO - Обработка data/input\user_test.csv как сущности users, строк: 6
+2025-11-03 15:17:25,091 - app.etl.loaders - ERROR - Error inserting user
+Traceback (most recent call last):
+  File "D:\pythonProject\MTSUrent_API\app\etl\loaders.py", line 21, in load_users
+    data = schemas.UserCreate(**r)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\main.py", line 164, in __init__
+    __pydantic_self__.__pydantic_validator__.validate_python(data, self_instance=__pydantic_self__)
+pydantic_core._pydantic_core.ValidationError: 3 validation errors for UserCreate
+phone_number
+  Field required [type=missing, input_value={'user_id': 'ab6d3fcf-eb4...ion_date': '2024-05-10'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.5/v/missing
+first_name
+  Field required [type=missing, input_value={'user_id': 'ab6d3fcf-eb4...ion_date': '2024-05-10'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.5/v/missing
+last_name
+  Field required [type=missing, input_value={'user_id': 'ab6d3fcf-eb4...ion_date': '2024-05-10'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.5/v/missing
+2025-11-03 15:17:25,112 - app.etl.orchestrator - WARNING - Ошибки сохранены в data/errors\user_test.csv.errors.json
+2025-11-03 15:17:25,113 - app.etl.orchestrator - INFO - Файл data/input\user_test.csv перемещён в data/processed\user_test.csv
+2025-11-03 15:17:25,114 - mt-surent-etl - INFO - ETL завершён. Отчёт:
+2025-11-03 15:17:25,181 - mt-surent-etl - INFO - data/input\user_test.csv -> {'total': 6, 'created': 0, 'errors': ['Invalid UUID for user_id: bad-uuid-format', 'Invalid email format: bademail@@example', 'Invalid phone number: notaphone', 'Invalid registration_date: 20-15-2024', 'Invalid email format: nan', "3 validation errors for UserCreate\nphone_number\n  Field required [type=missing, input_value={'user_id': 'ab6d3fcf-eb4...ion_date': '2024-05-10'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.5/v/missing\nfirst_name\n  Field required [type=missing, input_value={'user_id': 'ab6d3fcf-eb4...ion_date': '2024-05-10'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.5/v/missing\nlast_name\n  Field required [type=missing, input_value={'user_id': 'ab6d3fcf-eb4...ion_date': '2024-05-10'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.5/v/missing"]}
+2025-11-03 15:24:22,950 - app.etl.extractors - INFO - Найдено файлов для обработки: 1
+2025-11-03 15:24:22,952 - app.etl.extractors - INFO - Извлечено 6 строк из data/input\user_test.csv
+2025-11-03 15:24:22,952 - app.etl.orchestrator - INFO - Обработка data/input\user_test.csv как сущности users, строк: 6
+2025-11-03 15:24:22,959 - app.crud - INFO - Creating user: Иван Иванов
+2025-11-03 15:24:23,212 - app.crud - INFO - User created with ID: 8e6ced3d-a2ab-4b9e-be70-f93f877b71c2
+2025-11-03 15:24:23,212 - app.etl.orchestrator - WARNING - Ошибки сохранены в data/errors\user_test.csv.errors.json
+2025-11-03 15:24:23,213 - app.etl.orchestrator - INFO - Файл data/input\user_test.csv перемещён в data/processed\user_test.csv
+2025-11-03 15:24:23,213 - mt-surent-etl - INFO - ETL завершён. Отчёт:
+2025-11-03 15:24:23,213 - mt-surent-etl - INFO - data/input\user_test.csv -> {'total': 6, 'created': 1, 'errors': ['Invalid UUID for user_id: bad-uuid-format', 'Invalid email format: bademail@@example', 'Invalid phone number: notaphone', 'Invalid registration_date: 20-15-2024', 'Invalid email format: nan']}
+2025-11-03 15:56:23,993 - app.etl.extractors - INFO - Найдено файлов для обработки: 1
+2025-11-03 15:56:23,995 - app.etl.extractors - INFO - Извлечено 6 строк из data/input\user_test.csv
+2025-11-03 15:56:23,995 - app.etl.orchestrator - INFO - Обработка data/input\user_test.csv как сущности users, строк: 6
+2025-11-03 15:56:23,999 - app.crud - INFO - Creating user: Иван Иванов
+2025-11-03 15:56:24,086 - app.crud - INFO - User created with ID: e2c673bb-753c-41ee-8d14-fb4cd2f55882
+2025-11-03 15:56:24,087 - app.etl.orchestrator - WARNING - Ошибки сохранены в data/errors\user_test.csv.errors.json
+2025-11-03 15:56:24,087 - app.etl.orchestrator - INFO - Файл data/input\user_test.csv перемещён в data/processed\user_test.csv
+2025-11-03 15:56:24,087 - mt-surent-etl - INFO - ETL завершён. Отчёт:
+2025-11-03 15:56:24,087 - mt-surent-etl - INFO - data/input\user_test.csv -> {'total': 6, 'created': 1, 'errors': ['Invalid UUID for user_id: bad-uuid-format', 'Invalid email format: bademail@@example', 'Invalid phone number: notaphone', 'Invalid registration_date: 20-15-2024', 'Invalid email format: nan']}
